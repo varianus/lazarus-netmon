@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <General>
+      <Flags>
+        <MainUnitHasCreateFormStatements Value="False"/>
+      </Flags>
+      <MainUnit Value="0"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <StringTable ProductVersion=""/>
+    </VersionInfo>
+    <BuildModes Count="3" Active="Release">
+      <Item1 Name="Default" Default="True"/>
+      <Item2 Name="Debug">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="netmon"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <TargetProcessor Value="ATHLON64"/>
+            <TargetCPU Value="x86_64"/>
+            <TargetOS Value="linux"/>
+            <Optimizations>
+              <VariablesInRegisters Value="True"/>
+              <UncertainOptimizations Value="True"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+              <UseLineInfoUnit Value="False"/>
+              <UseHeaptrc Value="True"/>
+              <UseExternalDbgSyms Value="True"/>
+            </Debugging>
+          </Linking>
+          <Other>
+            <CompilerMessages>
+              <UseMsgFile Value="True"/>
+            </CompilerMessages>
+            <CompilerPath Value="$(CompPath)"/>
+          </Other>
+        </CompilerOptions>
+      </Item2>
+      <Item3 Name="Release">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="netmon"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="../common"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <TargetProcessor Value="ATHLON64"/>
+            <TargetCPU Value="x86_64"/>
+            <TargetOS Value="linux"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+              <VariablesInRegisters Value="True"/>
+              <UncertainOptimizations Value="True"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <UseLineInfoUnit Value="False"/>
+              <StripSymbols Value="True"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+          </Linking>
+          <Other>
+            <CompilerMessages>
+              <UseMsgFile Value="True"/>
+            </CompilerMessages>
+            <CompilerPath Value="$(CompPath)"/>
+          </Other>
+        </CompilerOptions>
+      </Item3>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="1">
+      <Item1>
+        <PackageName Value="LCL"/>
+      </Item1>
+    </RequiredPackages>
+    <Units Count="18">
+      <Unit0>
+        <Filename Value="netmon.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="netmon"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="113"/>
+        <CursorPos X="30" Y="145"/>
+        <UsageCount Value="29"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="../conntimer/main.pas"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="main"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="47"/>
+        <CursorPos X="46" Y="25"/>
+        <UsageCount Value="10"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="/usr/share/fpcsrc/2.4.2/rtl/objpas/dateutils.pp"/>
+        <UnitName Value="dateutils"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="6" Y="1"/>
+        <UsageCount Value="9"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="/usr/share/fpcsrc/2.4.2/rtl/objpas/dateutil.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="2180"/>
+        <CursorPos X="35" Y="2189"/>
+        <UsageCount Value="9"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="/usr/share/fpcsrc/2.4.2/rtl/objpas/sysutils/datih.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="19"/>
+        <CursorPos X="4" Y="40"/>
+        <UsageCount Value="9"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="../../dump-net"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="49" Y="5"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="/usr/share/fpcsrc/2.4.2/rtl/linux/unxsysch.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="10" Y="16"/>
+        <UsageCount Value="9"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="../../scripts/sysmon"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="24"/>
+        <CursorPos X="180" Y="65"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="netinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="NetInfo"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="38" Y="23"/>
+        <UsageCount Value="29"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="../../development/fpc/rtl/unix/aliasptp.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="36"/>
+        <CursorPos X="5" Y="57"/>
+        <UsageCount Value="11"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="../../development/fpc/rtl/unix/unixtype.pp"/>
+        <UnitName Value="unixtype"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="3" Y="24"/>
+        <UsageCount Value="11"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="../../development/fpc/rtl/linux/ptypes.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="47"/>
+        <CursorPos X="5" Y="86"/>
+        <UsageCount Value="11"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="../../development/fpc/rtl/inc/systemh.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="571"/>
+        <CursorPos X="13" Y="592"/>
+        <UsageCount Value="11"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="../../development/fpc/rtl/inc/system.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="563"/>
+        <CursorPos X="10" Y="536"/>
+        <UsageCount Value="10"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="../daemon/netinfo.pas"/>
+        <UnitName Value="NetInfo"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="../daemon/uikeythread.pas"/>
+        <UnitName Value="uikeythread"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="12"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="../daemon/uikeydaemon.pas"/>
+        <UnitName Value="uikeydaemon"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="44"/>
+        <CursorPos X="1" Y="51"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="../common/ikeycommon.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ikeycommon"/>
+        <UsageCount Value="20"/>
+      </Unit17>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="95" Column="1" TopLine="76"/>
+      </Position1>
+      <Position2>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="94" Column="1" TopLine="76"/>
+      </Position2>
+      <Position3>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="93" Column="1" TopLine="76"/>
+      </Position3>
+      <Position4>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="92" Column="1" TopLine="76"/>
+      </Position4>
+      <Position5>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="97" Column="1" TopLine="76"/>
+      </Position5>
+      <Position6>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="99" Column="1" TopLine="76"/>
+      </Position6>
+      <Position7>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="106" Column="1" TopLine="91"/>
+      </Position7>
+      <Position8>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="108" Column="1" TopLine="91"/>
+      </Position8>
+      <Position9>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="109" Column="1" TopLine="91"/>
+      </Position9>
+      <Position10>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="110" Column="1" TopLine="91"/>
+      </Position10>
+      <Position11>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="111" Column="1" TopLine="91"/>
+      </Position11>
+      <Position12>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="112" Column="1" TopLine="91"/>
+      </Position12>
+      <Position13>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="113" Column="1" TopLine="91"/>
+      </Position13>
+      <Position14>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="114" Column="1" TopLine="91"/>
+      </Position14>
+      <Position15>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="115" Column="1" TopLine="91"/>
+      </Position15>
+      <Position16>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="116" Column="1" TopLine="91"/>
+      </Position16>
+      <Position17>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="117" Column="1" TopLine="91"/>
+      </Position17>
+      <Position18>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="118" Column="1" TopLine="91"/>
+      </Position18>
+      <Position19>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="119" Column="1" TopLine="91"/>
+      </Position19>
+      <Position20>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="122" Column="1" TopLine="106"/>
+      </Position20>
+      <Position21>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="124" Column="1" TopLine="106"/>
+      </Position21>
+      <Position22>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="125" Column="1" TopLine="106"/>
+      </Position22>
+      <Position23>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="127" Column="1" TopLine="106"/>
+      </Position23>
+      <Position24>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="129" Column="1" TopLine="106"/>
+      </Position24>
+      <Position25>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="137" Column="1" TopLine="121"/>
+      </Position25>
+      <Position26>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="145" Column="1" TopLine="121"/>
+      </Position26>
+      <Position27>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="147" Column="1" TopLine="121"/>
+      </Position27>
+      <Position28>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="110" Column="43" TopLine="90"/>
+      </Position28>
+      <Position29>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="152" Column="48" TopLine="102"/>
+      </Position29>
+      <Position30>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="12" Column="13" TopLine="1"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <Target>
+      <Filename Value="netmon"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <CodeGeneration>
+      <TargetProcessor Value="ATHLON64"/>
+      <TargetCPU Value="x86_64"/>
+      <TargetOS Value="linux"/>
+      <Optimizations>
+        <VariablesInRegisters Value="True"/>
+        <UncertainOptimizations Value="True"/>
+      </Optimizations>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <UseLineInfoUnit Value="False"/>
+      </Debugging>
+      <LinkSmart Value="True"/>
+    </Linking>
+    <Other>
+      <CompilerMessages>
+        <UseMsgFile Value="True"/>
+      </CompilerMessages>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+  <EditorMacros Count="0"/>
+</CONFIG>

@@ -1,0 +1,188 @@
+object Form1: TForm1
+  Left = 600
+  Height = 473
+  Top = 276
+  Width = 939
+  Caption = 'Internet Key monitor'
+  ClientHeight = 473
+  ClientWidth = 939
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '1.3'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 473
+    Top = 0
+    Width = 939
+    ActivePage = TabSheet1
+    Align = alClient
+    TabIndex = 1
+    TabOrder = 0
+    object Stats: TTabSheet
+      Caption = 'Stats'
+      ClientHeight = 438
+      ClientWidth = 933
+      object Chart1: TChart
+        Left = 2
+        Height = 330
+        Top = 106
+        Width = 929
+        AntialiasingMode = amOn
+        AxisList = <        
+          item
+            Marks.Format = '%0:.9g'
+            Marks.Range.Max = 500
+            Marks.Style = smsCustom
+            Minors = <>
+            Title.LabelFont.Orientation = 900
+          end        
+          item
+            Intervals.NiceSteps = '1'
+            Visible = False
+            Alignment = calBottom
+            Minors = <>
+            Range.UseMax = True
+          end>
+        BackColor = 2829099
+        ExpandPercentage = 3
+        Extent.XMax = 100
+        Extent.XMin = 100
+        ExtentSizeLimit.XMax = 100
+        ExtentSizeLimit.XMin = 100
+        Foot.Brush.Color = clBtnFace
+        Foot.Font.Color = clBlue
+        Title.Brush.Color = clBtnFace
+        Title.Font.Color = clBlue
+        Title.Text.Strings = (
+          'TAChart'
+        )
+        Align = alClient
+        BorderSpacing.Left = 1
+        BorderSpacing.Top = 1
+        BorderSpacing.Right = 1
+        BorderSpacing.Bottom = 1
+        BorderSpacing.Around = 1
+        BorderSpacing.InnerBorder = 1
+        ParentColor = False
+        object Chart1LineSeries1: TLineSeries
+          Shadow.Color = clLime
+          LinePen.Color = clLime
+        end
+        object Chart1LineSeries2: TLineSeries
+          Shadow.Color = clRed
+          LinePen.Color = clRed
+        end
+      end
+      object Panel1: TPanel
+        Left = 0
+        Height = 104
+        Top = 0
+        Width = 933
+        Align = alTop
+        ClientHeight = 104
+        ClientWidth = 933
+        TabOrder = 1
+        object stDataOut: TStaticText
+          Left = 240
+          Height = 21
+          Top = 72
+          Width = 69
+          Alignment = taRightJustify
+          Caption = '000.00 MB'
+          OnClick = stDataInClick
+          TabOrder = 0
+        end
+        object stSpeedOut: TStaticText
+          Left = 128
+          Height = 21
+          Top = 72
+          Width = 78
+          Alignment = taRightJustify
+          Caption = '000.00 kbps'
+          TabOrder = 1
+        end
+        object Label3: TLabel
+          Left = 16
+          Height = 17
+          Top = 74
+          Width = 43
+          Caption = 'Upload'
+          ParentColor = False
+        end
+        object stDataIn: TStaticText
+          Left = 240
+          Height = 21
+          Top = 40
+          Width = 69
+          Alignment = taRightJustify
+          Caption = '000.00 MB'
+          OnClick = stDataInClick
+          TabOrder = 2
+        end
+        object stSpeedin: TStaticText
+          Left = 128
+          Height = 21
+          Top = 40
+          Width = 78
+          Alignment = taRightJustify
+          Caption = '000.00 kbps'
+          TabOrder = 3
+        end
+        object Label2: TLabel
+          Left = 16
+          Height = 17
+          Top = 42
+          Width = 61
+          Caption = 'Download'
+          ParentColor = False
+        end
+        object stConnTime: TStaticText
+          Left = 128
+          Height = 17
+          Top = 8
+          Width = 65
+          Caption = '00:00:00'
+          TabOrder = 4
+        end
+        object Label1: TLabel
+          Left = 16
+          Height = 17
+          Top = 8
+          Width = 101
+          Caption = 'Connection Time'
+          ParentColor = False
+        end
+      end
+    end
+    object TabSheet1: TTabSheet
+      Caption = 'SMS'
+      ClientHeight = 438
+      ClientWidth = 933
+      object Memo1: TMemo
+        Left = 45
+        Height = 256
+        Top = 72
+        Width = 715
+        Lines.Strings = (
+          'Memo1'
+        )
+        TabOrder = 0
+      end
+      object Button1: TButton
+        Left = 45
+        Height = 25
+        Top = 24
+        Width = 75
+        Caption = 'Button1'
+        OnClick = Button1Click
+        TabOrder = 1
+      end
+    end
+  end
+  object Timer1: TTimer
+    Interval = 800
+    OnTimer = Timer1Timer
+    left = 272
+    top = 152
+  end
+end

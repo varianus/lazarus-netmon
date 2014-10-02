@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <General>
+      <Flags>
+        <MainUnitHasCreateFormStatements Value="False"/>
+      </Flags>
+      <MainUnit Value="0"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <StringTable ProductVersion=""/>
+    </VersionInfo>
+    <BuildModes Count="1" Active="Default">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+        <LaunchingApplication Use="True"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="1">
+      <Item1>
+        <PackageName Value="LCL"/>
+      </Item1>
+    </RequiredPackages>
+    <Units Count="14">
+      <Unit0>
+        <Filename Value="netmon.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="netmon"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="67"/>
+        <CursorPos X="14" Y="79"/>
+        <UsageCount Value="28"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="../conntimer/main.pas"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="main"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="47"/>
+        <CursorPos X="46" Y="25"/>
+        <UsageCount Value="10"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="/usr/share/fpcsrc/2.4.2/rtl/objpas/dateutils.pp"/>
+        <UnitName Value="dateutils"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="6" Y="1"/>
+        <UsageCount Value="9"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="/usr/share/fpcsrc/2.4.2/rtl/objpas/dateutil.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="2180"/>
+        <CursorPos X="35" Y="2189"/>
+        <UsageCount Value="9"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="/usr/share/fpcsrc/2.4.2/rtl/objpas/sysutils/datih.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="19"/>
+        <CursorPos X="4" Y="40"/>
+        <UsageCount Value="9"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="../../dump-net"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="49" Y="5"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="/usr/share/fpcsrc/2.4.2/rtl/linux/unxsysch.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="10" Y="16"/>
+        <UsageCount Value="9"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="../../scripts/sysmon"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="24"/>
+        <CursorPos X="180" Y="65"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="netinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="NetInfo"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="38" Y="23"/>
+        <UsageCount Value="28"/>
+        <Loaded Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="../../development/fpc/rtl/unix/aliasptp.inc"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="36"/>
+        <CursorPos X="5" Y="57"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="../../development/fpc/rtl/unix/unixtype.pp"/>
+        <UnitName Value="unixtype"/>
+        <EditorIndex Value="5"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="3" Y="24"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="../../development/fpc/rtl/linux/ptypes.inc"/>
+        <EditorIndex Value="6"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="47"/>
+        <CursorPos X="5" Y="86"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="../../development/fpc/rtl/inc/systemh.inc"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="571"/>
+        <CursorPos X="13" Y="592"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="../../development/fpc/rtl/inc/system.inc"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="563"/>
+        <CursorPos X="10" Y="536"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit13>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="132" Column="29" TopLine="94"/>
+      </Position1>
+      <Position2>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="124" Column="18" TopLine="110"/>
+      </Position2>
+      <Position3>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="111" Column="41" TopLine="106"/>
+      </Position3>
+      <Position4>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="127" Column="13" TopLine="112"/>
+      </Position4>
+      <Position5>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="74" Column="27" TopLine="56"/>
+      </Position5>
+      <Position6>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="116" Column="3" TopLine="94"/>
+      </Position6>
+      <Position7>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="51" Column="28" TopLine="33"/>
+      </Position7>
+      <Position8>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="105" Column="35" TopLine="98"/>
+      </Position8>
+      <Position9>
+        <Filename Value="netinfo.pas"/>
+        <Caret Line="19" Column="33" TopLine="1"/>
+      </Position9>
+      <Position10>
+        <Filename Value="netinfo.pas"/>
+        <Caret Line="9" Column="28" TopLine="1"/>
+      </Position10>
+      <Position11>
+        <Filename Value="netinfo.pas"/>
+        <Caret Line="35" Column="16" TopLine="1"/>
+      </Position11>
+      <Position12>
+        <Filename Value="netinfo.pas"/>
+        <Caret Line="32" Column="22" TopLine="1"/>
+      </Position12>
+      <Position13>
+        <Filename Value="../../development/fpc/rtl/unix/aliasptp.inc"/>
+        <Caret Line="57" Column="5" TopLine="36"/>
+      </Position13>
+      <Position14>
+        <Filename Value="../../development/fpc/rtl/unix/unixtype.pp"/>
+        <Caret Line="24" Column="3" TopLine="1"/>
+      </Position14>
+      <Position15>
+        <Filename Value="netinfo.pas"/>
+        <Caret Line="21" Column="48" TopLine="1"/>
+      </Position15>
+      <Position16>
+        <Filename Value="../../development/fpc/rtl/inc/systemh.inc"/>
+        <Caret Line="307" Column="3" TopLine="259"/>
+      </Position16>
+      <Position17>
+        <Filename Value="netinfo.pas"/>
+        <Caret Line="21" Column="48" TopLine="1"/>
+      </Position17>
+      <Position18>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="11" Column="4" TopLine="1"/>
+      </Position18>
+      <Position19>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="108" Column="1" TopLine="104"/>
+      </Position19>
+      <Position20>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="24" Column="1" TopLine="3"/>
+      </Position20>
+      <Position21>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="110" Column="39" TopLine="89"/>
+      </Position21>
+      <Position22>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="121" Column="32" TopLine="105"/>
+      </Position22>
+      <Position23>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="108" Column="13" TopLine="86"/>
+      </Position23>
+      <Position24>
+        <Filename Value="netinfo.pas"/>
+        <Caret Line="23" Column="1" TopLine="2"/>
+      </Position24>
+      <Position25>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="14" Column="1" TopLine="9"/>
+      </Position25>
+      <Position26>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="71" Column="78" TopLine="59"/>
+      </Position26>
+      <Position27>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="70" Column="28" TopLine="50"/>
+      </Position27>
+      <Position28>
+        <Filename Value="../../development/fpc/rtl/inc/system.inc"/>
+        <Caret Line="589" Column="3" TopLine="587"/>
+      </Position28>
+      <Position29>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="68" Column="23" TopLine="50"/>
+      </Position29>
+      <Position30>
+        <Filename Value="netmon.lpr"/>
+        <Caret Line="86" Column="85" TopLine="69"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <Target>
+      <Filename Value="netmon"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <CodeGeneration>
+      <SmartLinkUnit Value="True"/>
+      <RelocatableUnit Value="True"/>
+      <TargetProcessor Value="ATHLON64"/>
+      <TargetCPU Value="x86_64"/>
+      <TargetOS Value="linux"/>
+      <Optimizations>
+        <OptimizationLevel Value="3"/>
+        <VariablesInRegisters Value="True"/>
+        <UncertainOptimizations Value="True"/>
+      </Optimizations>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="False"/>
+        <UseLineInfoUnit Value="False"/>
+        <StripSymbols Value="True"/>
+      </Debugging>
+      <LinkSmart Value="True"/>
+    </Linking>
+    <Other>
+      <CompilerMessages>
+        <UseMsgFile Value="True"/>
+      </CompilerMessages>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+  <EditorMacros Count="0"/>
+</CONFIG>
