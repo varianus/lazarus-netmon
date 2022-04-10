@@ -67,7 +67,6 @@ var
 
 const
   BUS_NAME =  'org.marcocaselli.ikeymonitor';
-  path1 = '/org/marcocaselli/ikeymonitor';
 
 begin
   try
@@ -83,8 +82,8 @@ begin
 
       if ret <> DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER then Exit;
       msg := dbus_message_new_method_call(BUS_NAME, // target for the method call
-                                          path1, // object to call on
-                                          pchar(BUS_NAME+'.method'), // interface to call on
+                                          '/', // object to call on
+                                          pchar(BUS_NAME), // interface to call on
                                           'GetData'); // method name
 
       Reply := dbus_connection_send_with_reply_and_block(Connection, msg, -1, @Error);
@@ -144,10 +143,10 @@ begin
         write('<click>');
         write('/home/varianus/source/netmon/gui/guinetmon');
         writeln('</click>');
-        WriteLn (format('<txt>%S '+
-                      '↓%3.2f ↑%3.2f '+
-                      '</txt>', [
-                      TimeToStr(Data.ActiveTime),
+        WriteLn (format('<txt>'+//%S '+
+                '↓'+'%5.2f '+'↑'+'%4.2f '+
+                  '</txt>', [
+                      //TimeToStr(Data.ActiveTime),
                       Data.InSpeed,
                       Data.outSpeed
                       ]));

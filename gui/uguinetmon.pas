@@ -76,8 +76,8 @@ begin
   try
       dbus_error_init(@error);
       msg := dbus_message_new_method_call(BUS_NAME, // target for the method call
-                                          path1, // object to call on
-                                          pchar(BUS_NAME+'.method'), // interface to call on
+                                          '/', // object to call on
+                                          pchar(BUS_NAME), // interface to call on
                                           'GetData'); // method name
 
       Reply := dbus_connection_send_with_reply_and_block(Connection, msg, -1, @Error);

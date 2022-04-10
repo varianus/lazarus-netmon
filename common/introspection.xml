@@ -1,0 +1,19 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" 
+  "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.freedesktop.DBus.Introspectable">
+    <method name="Introspect">' + #10 +
+     <arg name="data" direction="out" type="s"/>
+   </method>
+  </interface>
+  <interface name="/org/marcocaselli/ikeymonitor">
+    <method name="GetData">
+      <arg name="ActiveTime" type="d" direction="out"/>
+      <arg name="InBytes" type="x" direction="out"/>
+      <arg name="OutBytes" type="x" direction="out"/>
+      <arg name="InSpeed" type="d" direction="out"/>
+      <arg name="outSpeed" type="d" direction="out"/>
+      <arg name="Count" type="x" direction="out"/>
+    </method>
+  </interface>
+</node>
