@@ -62,7 +62,10 @@ begin
              begin
                coeff := MSecsPerDay * (currTime - LastScan);
                ikeyData.InSpeed:= (bNow.BytesIn - bLast.BytesIn) * ((1000 / coeff) / 1024) ;
+               if ikeyData.InSpeed < 0 then ikeyData.InSpeed := 0;
                ikeyData.OutSpeed:= (bNow.BytesOut - bLast.BytesOut) * ((1000 / coeff) / 1024) ;
+               if ikeyData.OutSpeed < 0 then ikeyData.OutSpeed := 0;
+
                ikeyData.InBytes:= bNow.BytesIn;
                ikeyData.OutBytes:= bNow.BytesOut;
                bLast := bNow;
