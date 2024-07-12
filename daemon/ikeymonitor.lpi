@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="9"/>
+    <Version Value="12"/>
     <General>
       <Flags>
         <MainUnitHasCreateFormStatements Value="False"/>
+        <MainUnitHasTitleStatement Value="False"/>
+        <MainUnitHasScaledStatement Value="False"/>
+        <CompatibilityMode Value="True"/>
       </Flags>
       <SessionStorage Value="InProjectDir"/>
-      <MainUnit Value="0"/>
       <Title Value="Daemon application"/>
       <UseAppBundle Value="False"/>
       <ResourceType Value="res"/>
@@ -15,16 +17,18 @@
     <i18n>
       <EnableI18N LFM="False"/>
     </i18n>
-    <VersionInfo>
-      <StringTable ProductVersion=""/>
-    </VersionInfo>
     <BuildModes Count="3">
       <Item1 Name="Default" Default="True"/>
       <Item2 Name="Debug">
         <CompilerOptions>
           <Version Value="11"/>
+          <Target>
+            <Filename Value="bin/ikeimonitor"/>
+          </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="../common"/>
+            <UnitOutputDirectory Value="lib"/>
           </SearchPaths>
           <Parsing>
             <SyntaxOptions>
@@ -46,20 +50,18 @@
               <UseExternalDbgSyms Value="True"/>
             </Debugging>
           </Linking>
-          <Other>
-            <CompilerMessages>
-              <MsgFileName Value=""/>
-            </CompilerMessages>
-            <CompilerPath Value="$(CompPath)"/>
-          </Other>
         </CompilerOptions>
       </Item2>
       <Item3 Name="Release">
         <CompilerOptions>
           <Version Value="11"/>
+          <Target>
+            <Filename Value="bin/ikeymonitor"/>
+          </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
             <OtherUnitFiles Value="../common"/>
+            <UnitOutputDirectory Value="lib"/>
           </SearchPaths>
           <CodeGeneration>
             <SmartLinkUnit Value="True"/>
@@ -74,12 +76,6 @@
             </Debugging>
             <LinkSmart Value="True"/>
           </Linking>
-          <Other>
-            <CompilerMessages>
-              <MsgFileName Value=""/>
-            </CompilerMessages>
-            <CompilerPath Value="$(CompPath)"/>
-          </Other>
         </CompilerOptions>
       </Item3>
     </BuildModes>
@@ -88,36 +84,40 @@
     </PublishOptions>
     <RunParams>
       <local>
-        <FormatVersion Value="1"/>
         <CommandLineParams Value="--run"/>
       </local>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default">
+          <local>
+            <CommandLineParams Value="--run"/>
+          </local>
+        </Mode0>
+      </Modes>
     </RunParams>
-    <RequiredPackages Count="4">
+    <RequiredPackages Count="3">
       <Item1>
-        <PackageName Value="SQLDBLaz"/>
+        <PackageName Value="LazDaemon"/>
       </Item1>
       <Item2>
-        <PackageName Value="LazDaemon"/>
+        <PackageName Value="LCL"/>
       </Item2>
       <Item3>
-        <PackageName Value="LCL"/>
-      </Item3>
-      <Item4>
         <PackageName Value="FCL"/>
-      </Item4>
+      </Item3>
     </RequiredPackages>
     <Units Count="6">
       <Unit0>
         <Filename Value="ikeymonitor.lpr"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="ikeymonitor"/>
       </Unit0>
       <Unit1>
         <Filename Value="uikeymapper.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="ikeyMapper"/>
         <HasResources Value="True"/>
-        <UnitName Value="uikeymapper"/>
+        <ResourceBaseClass Value="Other"/>
+        <ResourceBaseClassname Value="TDaemonMapper"/>
       </Unit1>
       <Unit2>
         <Filename Value="uikeydaemon.pas"/>
@@ -125,22 +125,18 @@
         <ComponentName Value="ikeyDaemon"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <UnitName Value="uikeydaemon"/>
       </Unit2>
       <Unit3>
         <Filename Value="uikeythread.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="uikeythread"/>
       </Unit3>
       <Unit4>
         <Filename Value="netinfo.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="netinfo"/>
       </Unit4>
       <Unit5>
         <Filename Value="../common/ikeycommon.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="ikeycommon"/>
       </Unit5>
     </Units>
   </ProjectOptions>
@@ -148,13 +144,8 @@
     <Version Value="11"/>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="../common"/>
     </SearchPaths>
-    <Other>
-      <CompilerMessages>
-        <MsgFileName Value=""/>
-      </CompilerMessages>
-      <CompilerPath Value="$(CompPath)"/>
-    </Other>
   </CompilerOptions>
   <Debugging>
     <Exceptions Count="3">

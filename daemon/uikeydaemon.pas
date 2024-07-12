@@ -5,15 +5,14 @@ unit uikeydaemon;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, uikeythread, DaemonApp, eventlog, dbus, sqldblib,
-  sqlite3conn, dbusextension, ctypes;
+  Classes, SysUtils, FileUtil, uikeythread, DaemonApp, eventlog, dbus,
+  dbusextension, ctypes;
 
 type
 
   { TikeyDaemon }
 
   TikeyDaemon = class(TDaemon)
-    SQLite3Connection1: TSQLite3Connection;
     procedure DataModuleStart(Sender: TCustomDaemon; var OK: boolean);
     procedure DataModuleStop(Sender: TCustomDaemon; var OK: boolean);
   private

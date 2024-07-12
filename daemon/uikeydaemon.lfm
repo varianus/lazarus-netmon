@@ -6,13 +6,4 @@ object ikeyDaemon: TikeyDaemon
   HorizontalOffset = 1135
   VerticalOffset = 352
   Width = 486
-  object SQLite3Connection1: TSQLite3Connection
-    Connected = False
-    LoginPrompt = False
-    KeepConnection = False
-    LogEvents = []
-    Options = []
-    left = 64
-    top = 24
-  end
 end
