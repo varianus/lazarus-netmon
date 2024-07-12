@@ -1,0 +1,11 @@
+[Unit]
+Description=Internet key Monitor
+
+[Service]
+Type=dbus
+BusName=org.marcocaselli.ikeymonitor
+Restart=on-failure
+ExecStart=/home/varianus/source/netmon/daemon/bin/ikeymonitor --run
+
+[Install]
+WantedBy=default.target
