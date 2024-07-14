@@ -23,7 +23,7 @@
         <CompilerOptions>
           <Version Value="11"/>
           <Target>
-            <Filename Value="bin/ikeimonitor"/>
+            <Filename Value="bin/ikeymonitor"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
@@ -133,6 +133,7 @@
       <Unit4>
         <Filename Value="netinfo.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="NetInfo"/>
       </Unit4>
       <Unit5>
         <Filename Value="../common/ikeycommon.pas"/>

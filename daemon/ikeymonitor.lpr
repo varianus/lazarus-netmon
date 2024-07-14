@@ -10,7 +10,7 @@ Uses
   ikeycommon;
 
 begin
-  Application.Title:='Daemon application';
+  Application.Title:='IKeyMonitor Daemon application';
   Application.Initialize;
   Application.Run;
 end.
