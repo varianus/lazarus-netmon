@@ -5,7 +5,7 @@ unit uikeythread;
 interface
 
 uses
-  Classes, SysUtils, LCLIntf, DaemonApp, ikeycommon;
+  Classes, SysUtils, LCLIntf, DaemonApp, StrUtils, ikeycommon;
 
 type
 
@@ -15,6 +15,7 @@ type
   private
     { Private declarations }
     LastScan : TDateTime;
+    fComputeTime: boolean;
   protected
     Procedure ConnectionStarted;
     procedure ConnectionStopped;
@@ -22,6 +23,7 @@ type
   public
     Owner : TDaemon;
     ikeyData : RikeyData;
+    Procedure Initialize(const AInterface: string; ComputeTime: Boolean);
   end;
 
 implementation
@@ -53,7 +55,11 @@ begin
    while not Terminated do
     begin
       inc(ikeyData.cnt);
-      ikeyData.ActiveTime:= GetConnectionTime;
+      if fComputeTime then
+        ikeyData.ActiveTime:= GetConnectionTime
+      else
+        ikeyData.ActiveTime:= 0;
+
       if ikeyData.ActiveTime <> -1 then
          begin
            bNow := GetNetByte;
@@ -90,6 +96,12 @@ begin
        Sleep(1000);
     end;
 
+end;
+
+procedure TikeyThread.Initialize(const AInterface: string; ComputeTime: Boolean
+  );
+begin
+  NetId :=  PadLeft(Copy(trim(AInterface),1,6),6) +': ';
 end;
 
 end.

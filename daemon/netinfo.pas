@@ -14,6 +14,9 @@ type
     BytesOut:Int64;
   end;
 
+Const
+  NetId: string = '  ppp0: ';
+//  NetId :string = 'enp2s0: ';
 
 Function GetConnectionTime:TDateTime;
 Function GetNetByte:NetBytes;
@@ -50,8 +53,6 @@ Var
   Row : String;
   tmp : string;
   i,j:Integer;
-Const
-  NetId = '  ppp0: ';
 begin
 
   f:= TStringList.Create;

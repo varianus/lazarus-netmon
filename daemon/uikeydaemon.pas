@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, uikeythread, DaemonApp, eventlog, dbus,
-  dbusextension, ctypes;
+  dbusextension, ctypes, IniFiles;
 
 type
 
@@ -16,13 +16,17 @@ type
     procedure DataModuleStart(Sender: TCustomDaemon; var OK: boolean);
     procedure DataModuleStop(Sender: TCustomDaemon; var OK: boolean);
   private
+    FComputeTime: boolean;
+    FInterface: string;
     ikeyThread: TikeyThread;
     tm: TDBUSThread;
     Connection: PDBusConnection;
     procedure ActivateDBUS;
+    procedure LoadConfig;
     procedure OnThreadTerminate(Aobject: TObject);
   public
-    { public declarations }
+    property NetInterface: string read FInterface;
+    property ComputeTime: boolean read FComputeTime;
   end;
 
 var
@@ -38,24 +42,24 @@ const
 
 const
   INTROSPECT_XML = '<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" '
-                 + ' "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">               '
-                 + '<node>                                                                         '
-                 + '<interface name="org.freedesktop.DBus.Introspectable">                         '
-                 + '  <method name="Introspect">                                                   '
-                 + '   <arg name="data" direction="out" type="s"/>                                 '
-                 + ' </method>                                                                     '
-                 + '</interface>                                                                   '
-                 + '  <interface name="org.marcocaselli.ikeymonitor">                             '
-                 + '    <method name="GetData">                                                    '
-                 + '      <arg name="ActiveTime" type="d" direction="out"/>                        '
-                 + '      <arg name="InBytes" type="x" direction="out"/>                           '
-                 + '      <arg name="OutBytes" type="x" direction="out"/>                          '
-                 + '      <arg name="InSpeed" type="d" direction="out"/>                           '
-                 + '      <arg name="outSpeed" type="d" direction="out"/>                          '
-                 + '      <arg name="Count" type="x" direction="out"/>                             '
-                 + '    </method>                                                                  '
-                 + '  </interface>                                                                 '
-                 + '</node>                                                                        ';
+    + ' "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">               '
+    + '<node>                                                                         '
+    + '<interface name="org.freedesktop.DBus.Introspectable">                         '
+    + '  <method name="Introspect">                                                   '
+    + '   <arg name="data" direction="out" type="s"/>                                 '
+    + ' </method>                                                                     '
+    + '</interface>                                                                   '
+    + '  <interface name="org.marcocaselli.ikeymonitor">                             '
+    + '    <method name="GetData">                                                    '
+    + '      <arg name="ActiveTime" type="d" direction="out"/>                        '
+    + '      <arg name="InBytes" type="x" direction="out"/>                           '
+    + '      <arg name="OutBytes" type="x" direction="out"/>                          '
+    + '      <arg name="InSpeed" type="d" direction="out"/>                           '
+    + '      <arg name="outSpeed" type="d" direction="out"/>                          '
+    + '      <arg name="Count" type="x" direction="out"/>                             '
+    + '    </method>                                                                  '
+    + '  </interface>                                                                 '
+    + '</node>                                                                        ';
 
 procedure RegisterDaemon;
 begin
@@ -98,7 +102,7 @@ begin
   end;
 
   if (strcomp(dbus_message_get_path(message_), path1) = 0) or
-     (strcomp(dbus_message_get_path(message_), '/') = 0) then
+    (strcomp(dbus_message_get_path(message_), '/') = 0) then
   begin
 
     if (dbus_message_is_method_call(message_, PChar(BUS_NAME), 'GetData')) > 0 then
@@ -172,18 +176,70 @@ begin
   tm.Start;
 
 end;
+const
+  SectionUnix = 'UNIX';
+  IdentResourcesPath = 'ResourcesPath';
+  ResourceSubDirectory = 'Resources';
+
+const
+ {$ifdef UNIX}
+  DefaultDirectory = '/usr/share/ikeydaemon/';
+  {$DEFINE NEEDCFGSUBDIR}
+ {$endif}
+
+procedure TikeyDaemon.LoadConfig;
+var
+  Values: TStringList;
+  i: integer;
+  offset: integer;
+  str, FConfigFile: string;
+  Ini: TIniFile;
+begin
+
+  FConfigFile := GetAppConfigFile(False
+{$ifdef NEEDCFGSUBDIR}
+    , True
+{$ENDIF}
+    );
+
+  FConfigFile := ChangeFileExt(FConfigFile,'.conf');
+  if not FileExists(FConfigFile) then
+    begin
+      FConfigFile:= '/etc/ikeydaemon.conf';
+    end;
+
+  Ini := TIniFile.Create(FConfigFile, [ifoStripComments, ifoStripInvalid]);
+  Logger.active := False;
+  str := lowercase(Ini.ReadString('Config', 'LogType', 'syslog'));
+  if str = 'syslog' then
+    Logger.LogType := ltSystem
+  else
+  if str = 'logfile' then
+  begin
+    Logger.LogType := ltFile;
+    Logger.FileName := Ini.ReadString('Config', 'LogFile', '/var/log/ikeydaemon.log');
+    ForceDirectories(ExtractFileDir(logger.filename));
+  end
+  else
+    Logger.logtype := ltStdOut;
+  Logger.Active := True;
+
+  FInterface := ini.ReadString('Device', 'Interface', 'ppp0');
+  FComputeTime:= Ini.ReadBool('Device', 'ComputeTime', true);
+
+end;
 
 procedure TikeyDaemon.DataModuleStart(Sender: TCustomDaemon; var OK: boolean);
 begin
-  Logger.Active := False;
-  Logger.LogType := ltFile;
-  Logger.Active := True;
+
+  LoadConfig;
   Logger.Log(etInfo, 'Start');
 
   ikeyThread := TikeyThread.Create(True);
   ikeyThread.FreeOnTerminate := True;
   ikeyThread.OnTerminate := @OnThreadTerminate;
   ikeyThread.Owner := self;
+  ikeyThread.Initialize(FInterface, FComputeTime);
   ikeyThread.Start;
   ActivateDBUS;
   ok := True;
