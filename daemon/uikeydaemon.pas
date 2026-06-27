@@ -116,10 +116,10 @@ begin
       dbus_message_iter_append_basic(@sub0, DBUS_TYPE_INT64, @x_val);
       x_val := Data.OutBytes;
       dbus_message_iter_append_basic(@sub0, DBUS_TYPE_INT64, @x_val);
-      d_val := Data.InSpeed;
-      dbus_message_iter_append_basic(@sub0, DBUS_TYPE_DOUBLE, @d_val);
-      d_val := Data.outSpeed;
-      dbus_message_iter_append_basic(@sub0, DBUS_TYPE_DOUBLE, @d_val);
+      x_val := Data.InSpeed;
+      dbus_message_iter_append_basic(@sub0, DBUS_TYPE_INT64, @x_val);
+      x_val := Data.outSpeed;
+      dbus_message_iter_append_basic(@sub0, DBUS_TYPE_INT64, @x_val);
       x_val := Data.cnt;
       dbus_message_iter_append_basic(@sub0, DBUS_TYPE_INT64, @x_val);
       dbus_connection_send(connection, reply_message, nil);

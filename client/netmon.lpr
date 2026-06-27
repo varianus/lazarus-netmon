@@ -106,11 +106,11 @@ begin
             dbus_message_iter_get_basic(@args, @x_val);
             data.OutBytes:= x_Val;
             dbus_message_iter_next(@args);
-            dbus_message_iter_get_basic(@args, @d_val);
-            data.InSpeed:= d_Val;
+            dbus_message_iter_get_basic(@args, @x_val);
+            data.InSpeed:= x_Val;
             dbus_message_iter_next(@args);
-            dbus_message_iter_get_basic(@args, @d_val);
-            data.outSpeed:= d_Val;
+            dbus_message_iter_get_basic(@args, @x_val);
+            data.outSpeed:= x_Val;
             dbus_message_iter_next(@args);
             dbus_message_iter_get_basic(@args, @x_val);
             data.cnt:= x_Val;
@@ -139,16 +139,17 @@ begin
                 writeln('<img>/usr/share/icons/hicolor/24x24/status/xfpm-brightness-lcd.png</img>');
             end
           else
-             writeln('<img>/usr/share/icons/elementary-xfce/actions/24/help-info.png</img>');
+             writeln('<img>/usr/share/icons/PiXtrix/24x24/status/dialog-information.png</img>');
         write('<click>');
-        write('/home/varianus/source/netmon/gui/guinetmon');
+        write('/home/pi/source/lazarus-netmon/gui/guinetmon');
         writeln('</click>');
         WriteLn (format('<txt>'+//%S '+
-                '↓'+'%5.2f '+'↑'+'%4.2f '+
-                  '</txt>', [
+             //   '↓'+'%6.2f '+'↑'+'%5.2f '+
+                '↓'+'%s '+'↑'+'%s '+
+                 '</txt>', [
                       //TimeToStr(Data.ActiveTime),
-                      Data.InSpeed,
-                      Data.outSpeed
+                      FormatByteString(Data.InSpeed),
+                      FormatByteString(Data.outSpeed)
                       ]));
 
     end;

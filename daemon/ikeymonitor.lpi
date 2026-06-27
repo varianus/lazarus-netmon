@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="12"/>
+    <Version Value="13"/>
     <General>
       <Flags>
         <MainUnitHasCreateFormStatements Value="False"/>
@@ -66,6 +66,8 @@
           <CodeGeneration>
             <SmartLinkUnit Value="True"/>
             <RelocatableUnit Value="True"/>
+            <TargetCPU Value="aarch64"/>
+            <TargetOS Value="linux"/>
             <Optimizations>
               <OptimizationLevel Value="3"/>
             </Optimizations>

@@ -2,8 +2,9 @@ object ikeyDaemon: TikeyDaemon
   OldCreateOrder = False
   OnStart = DataModuleStart
   OnStop = DataModuleStop
-  Height = 134
-  HorizontalOffset = 1135
-  VerticalOffset = 352
-  Width = 486
+  Height = 268
+  HorizontalOffset = 898
+  VerticalOffset = 704
+  Width = 972
+  PPI = 192
 end
